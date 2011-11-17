@@ -1,15 +1,15 @@
 public class Sol4 extends BaseSolution {
     public void runSolution() {
         int max = 0;
-        for (int i = 100; i <= 999; i++) {
-            for (int j = 100; j <= 999; j++) {
-                int product = i * j;
-                if (isPalindrome(product)) {
-                    max = Math.max(product, max);
+        for (int i = 999; i >= 100; i--) {
+            for (int j = 999; j >= i; j--) {
+                if (i * j > max && isPalindrome(i * j)) {
+                    System.out.println(i + " " + j);
+                    max = Math.max(i * j, max);
                 }
             }
         }
-        System.out.println(max);
+        System.out.println("max = " + max);
     }
 
     public boolean isPalindrome(int n) {
