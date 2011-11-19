@@ -21,18 +21,12 @@ public class Sol8 extends BaseSolution {
             "84580156166097919133875499200524063689912560717606" +
             "05886116467109405077541002256983155200055935729725" +
             "71636269561882670428252483600823257530420752963450";
-        int maxProduct = 0;        
-        int num0 = 0, num1 = 0, num2 = 0, num3 = 0, num4 = 0;
+        int maxProduct = 0, num0 = 0, num1 = 0, num2 = 0, num3 = 0, num4 = 0;
         for (int i = 0; i < numString.length(); i++) {
-            num4 = num3;
-            num3 = num2;
-            num2 = num1;
-            num1 = num0;
+            num4 = num3; num3 = num2; num2 = num1; num1 = num0;
             num0 = Integer.parseInt(new Character(numString.charAt(i)).toString());
             if (i >= 4) {
-                System.out.println(num0);
                 maxProduct = Math.max(maxProduct, num0 * num1 * num2 * num3 * num4);
-                //System.out.println(maxProduct);
             }
         }
         System.out.println(maxProduct);
