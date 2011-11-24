@@ -10,27 +10,27 @@ import java.util.*;
 
  public class Sol21 extends BaseSolution {
 
- 	int[] amicableArray = new int[10000];
+    int[] amicableArray = new int[10000];
 
     public void runSolution() {
-    	int sum = 0;
-    	for (int i = 1; i < 10000; i++) {
-    		int divisorSum = sumDivisors(i);
-    		if (divisorSum < 10000 && amicableArray[divisorSum] == i) {
-    			System.out.println("adding pair " + i + " " + divisorSum);
-    			sum += i + divisorSum;
-    		}
-    		amicableArray[i] = divisorSum;    		
-		}
-		System.out.println(sum);
+        int sum = 0;
+        for (int i = 1; i < 10000; i++) {
+            int divisorSum = sumDivisors(i);
+            if (divisorSum < 10000 && amicableArray[divisorSum] == i) {
+                System.out.println("adding pair " + i + " " + divisorSum);
+                sum += i + divisorSum;
+            }
+            amicableArray[i] = divisorSum;            
+        }
+        System.out.println(sum);
     }
 
     public int sumDivisors(int n) {
-    	int sum = 0;
-    	for (int i = 1; i < n; i++) {
-    		if (n % i == 0) sum += i;
-    	}
-    	return sum;
+        int sum = 0;
+        for (int i = 1; i < n; i++) {
+            if (n % i == 0) sum += i;
+        }
+        return sum;
     }
 }
  

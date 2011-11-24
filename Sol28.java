@@ -16,32 +16,32 @@ import java.util.*;
 
  public class Sol28 extends BaseSolution {
     public void runSolution() {
-    	System.out.println(sumDiagonals(5));    	
-    	System.out.println(sumDiagonals(1001));    	    	
+        System.out.println(sumDiagonals(5));    	
+        System.out.println(sumDiagonals(1001));    	    	
     }
 
     public long sumDiagonals(int sideLength) {
-    	long sum = 1;
-    	int currentSideLength = 3;
-    	long i = 3;
-    	int currentSide = 1;
-    	while (currentSideLength <= sideLength) {
-    		sum += i;
-    		System.out.println("i = " + i + " currentSideLength = " + currentSideLength);
+        long sum = 1;
+        int currentSideLength = 3;
+        long i = 3;
+        int currentSide = 1;
+        while (currentSideLength <= sideLength) {
+            sum += i;
+            System.out.println("i = " + i + " currentSideLength = " + currentSideLength);
 
-    		if (currentSide != 4) {
-	    		i += currentSideLength - 1;    			
-    		} else {
-    			i += currentSideLength + 1;
-    		}
+            if (currentSide != 4) {
+                i += currentSideLength - 1;    			
+            } else {
+                i += currentSideLength + 1;
+            }
 
-    		currentSide++;
-    		if (currentSide == 5) {
-    			currentSide = 1;
-    			currentSideLength += 2;    			
-    		}
-    	}
-    	return sum;
+            currentSide++;
+            if (currentSide == 5) {
+                currentSide = 1;
+                currentSideLength += 2;    			
+            }
+        }
+        return sum;
     }
 }
  
