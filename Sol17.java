@@ -18,7 +18,7 @@ public class Sol17 extends BaseSolution {
     public void runSolution() {
         int sum = 0;
         for (int i = 1; i <= 1000; i++) {
-            sum += countLetters(getWords(i));
+            sum += Util.countLetters(getWords(i));
         }
         System.out.println(sum);
     }
@@ -89,15 +89,5 @@ public class Sol17 extends BaseSolution {
         }
         System.out.println(words.toString());
         return words.toString();
-    }
-
-    public int countLetters(String words) {
-        int sum = 0;
-        for (int i = 0; i < words.length(); i++) {
-            if (Character.isLetter(words.charAt(i))) {
-                sum++;
-            }
-        }
-        return sum;
     }
 }

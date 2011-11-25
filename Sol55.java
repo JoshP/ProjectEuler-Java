@@ -17,7 +17,7 @@ import java.math.*;
         BigInteger bigNum = BigInteger.valueOf(num);
         for (int i = 0; i < 50; i++) {
             bigNum = bigNum.add(reverse(bigNum));
-            if (isPalindrome(bigNum.toString())) 
+            if (Util.isPalindrome(bigNum.toString())) 
                 return false;
         }
         return true;
@@ -26,14 +26,6 @@ import java.math.*;
     public BigInteger reverse(BigInteger num) {
         StringBuilder builder = new StringBuilder(num.toString());
         return new BigInteger(builder.reverse().toString());
-    }
-
-    public boolean isPalindrome(String str) {
-        for (int i = 0; i < str.length() / 2; i++) {
-            if (str.charAt(i) != str.charAt(str.length() - 1 - i)) 
-                return false;
-        }
-        return true;
     }
 }
  
