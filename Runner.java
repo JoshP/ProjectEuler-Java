@@ -5,7 +5,9 @@ public class Runner {
             try {
                 Class c = Class.forName("Sol" + args[0]);
                 Object sol = c.newInstance();
-                ((BaseSolution)sol).runSolution();                
+                long currentTime = System.currentTimeMillis();
+                ((BaseSolution)sol).runSolution();            
+                System.out.println("finished in " + (System.currentTimeMillis() - currentTime) + "ms");    
             } catch (Exception ex) {
                 System.err.println(ex);
             }
