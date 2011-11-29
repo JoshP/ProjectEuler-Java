@@ -24,9 +24,11 @@ import java.math.*;
 
     public void next(int[] a) {
         int k = -1;
-        for (int i = 0; i < a.length; i++) { // TODO reverse?
-            if (i < a.length - 1 && a[i] < a[i + 1])
+        for (int i = a.length - 2; i >= 0; i--) {
+            if (a[i] < a[i + 1]) {
                 k = i;
+                break;                
+            }
         }
         if (k == -1) {
             System.out.println("found last");
